@@ -53,8 +53,8 @@ app.use((req, res, next) => {
 });
 
 app.get("/api/checkauth", checkAuth);
-// app.use("/api/user", userroute);
-app.use("/", userroute);
+app.use("/api/user", userroute);
+// app.use("/", userroute);
 app.use("/api/algorithms", algorithmsroute);
 app.use("/api/search", checkAuth, searchroute);
 app.use("/api/userdo", checkAuth, userdoroute);
