@@ -53,7 +53,8 @@ app.use((req, res, next) => {
 });
 
 app.get("/api/checkauth", checkAuth);
-app.use("/api/user", userroute);
+// app.use("/api/user", userroute);
+app.use("/", userroute);
 app.use("/api/algorithms", algorithmsroute);
 app.use("/api/search", checkAuth, searchroute);
 app.use("/api/userdo", checkAuth, userdoroute);
@@ -63,7 +64,7 @@ app.use("/api/sendemail", sendemailroute);
 app.use("/api/changepassword", checkAuth, changepasswordroute);
 app.use("/api/provider", checkAuth, providerroute);
 app.use("/api/quiz", checkAuth, quiz_router);
-app.get('/',(req,res)=> {res.status(202).send("Hello Backend")});
+// app.get('/',(req,res)=> {res.status(202).send("Hello Backend")});
 
 app.listen(port, () => {
   console.log(`listening at port : ${port}`);
